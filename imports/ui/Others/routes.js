@@ -220,6 +220,20 @@ Router.route('admin', {
   },
 });
 
+
+Router.route('googlemaps',{
+  templateLayout: 'googlemaps',
+  path: '/admin/googlemaps',
+  template: 'googlemaps',
+  onBeforeFunction: function(){
+    import '../imports/ui/Admin/googlemaps.html';
+    this.next();
+  },
+  action: function(){
+    this.render('googlemaps');
+  },
+});
+
 Router.route('addsession',{
   templateLayout: 'addsession',
   path: '/admin/addsession',
@@ -258,6 +272,33 @@ Router.route('dashboardAdmin',{
     this.render('dashboardAdmin');
   },
 });
+
+Router.route('add_facilitator',{
+  templateLayout: 'add_facilitator',
+  path: '/admin/add_facilitator',
+  template: 'add_facilitator',
+  onBeforeFunction: function(){
+    import '../imports/ui/Admin/add_facilitator.html';
+    this.next();
+  },
+  action: function(){
+    this.render('add_facilitator');
+  },
+});
+
+Router.route('facilitatorlist',{
+  templateLayout: 'facilitatorlist',
+  path: '/admin/facilitatorlist',
+  template: 'facilitatorlist',
+  onBeforeFunction: function(){
+    import '../imports/ui/Admin/facilitatorlist.html';
+    this.next();
+  },
+  action: function(){
+    this.render('facilitatorlist');
+  },
+});
+
 Router.route('admin_lga',{
   templateLayout: 'admin_lga',
   path: '/admin/admin_lga',
@@ -270,18 +311,7 @@ Router.route('admin_lga',{
     this.render('admin_lga');
   },
 });
-Router.route('viewlga',{
-  templateLayout: 'viewlga',
-  path: '/admin/lga/lga_list',
-  template: 'viewlga',
-  onBeforeFunction: function(){
-    import '../imports/ui/Admin/getLgaList.html';
-    this.next();
-  },
-  action: function(){
-    this.render('viewlga');
-  },
-});
+
 Router.route('satisfaction',{
   templateLayout: 'satisfaction',
   path: '/admin/satisfaction',
@@ -308,7 +338,18 @@ Router.route('facilitators',{
   },
 });
 
-
+Router.route('viewlga',{
+  templateLayout: 'viewlga',
+  path: '/admin/viewlga',
+  template: 'viewlga',
+  onBeforeFunction: function(){
+    import '../imports/ui/Admin/viewlga.html';
+    this.next();
+  },
+  action: function(){
+    this.render('viewlga');
+  },
+});
 //<-------------Login Template Route------------->
 
 Router.route('login',{
@@ -380,6 +421,18 @@ Router.route('viewRecords',{
   },
 });
 
+Router.route('lgaReport',{
+  templateLayout: 'lgaReport',
+  path: '/lga/reports',
+  template: 'lgaReport',
+  onBeforeFunction: function(){
+    import '../imports/ui/LGA/lgaReport.html';
+    this.next();
+  },
+  action: function(){
+    this.render('lgaReport');
+  },
+});
 
 Router.route('createDb',{
   templateLayout: 'createDb',
